@@ -10,18 +10,32 @@ class Numero : public QWidget
     Q_OBJECT
 public:
     explicit Numero(QWidget *parent = 0);
-    
+    ~Numero();
+    Numero(int valor, int fila, int columna);
+    void setFila(int fila);
+    void setColumna(int Columna);
+    void setCuadricula(int fila, int columna);
+    void setValor(int valor);
+
+    int getFila();
+    int getColumna();
+    int getCuadricula();
+    int getValor();
+    void editarLabel(int n);
 signals:
     
 public slots:
 
 
 private:
+
     QTextEdit *textOpciones;
     QLabel *labelNumber;
     int cuadricula;
     int fila;
     int columna;
+    int valor;
+
 
 };
 

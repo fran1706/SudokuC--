@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLabel>
+#include "numero.h"
 namespace Ui {
 class MainWindow;
 }
@@ -14,6 +15,10 @@ class MainWindow : public QMainWindow
     
 public:
     explicit MainWindow(QWidget *parent = 0);
+    bool validar();
+    Numero* getTablero();
+
+
     ~MainWindow();
     
 private slots:
@@ -22,9 +27,12 @@ private slots:
     void on_toolButton_clicked();
 
 private:
+      bool Validarbloque(int IniColumna,int FinColumna,int IniFila,int FinFila);
+      bool SeRepite(int numero, int *arreglo);
+       int getCasilla(int columna, int fila);
     Ui::MainWindow *ui;
     QPushButton *numberButton[9];
-    QLabel *labelNumber[81];
+    Numero *numeros[81];
 
 };
 
